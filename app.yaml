@@ -1,0 +1,18 @@
+application: easywebapi
+version: 1
+runtime: php55
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /img
+  static_dir: img
+
+- url: /xmlcreator/js
+  static_dir: xmlcreator/js
+
+- url: /xmlcreator
+  script: xmlcreator/index.html
+
+- url: .*
+  script: home.html
