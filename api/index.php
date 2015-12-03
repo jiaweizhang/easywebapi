@@ -33,14 +33,11 @@ $app->post('/newxml', function () use ($app) {
 });
 
 
-/**
- * Get candidates
- * method GET
- * params - none
- * url - /events
- */
 $app->get('/xml', function () use ($app) {
-    echo "xmlget is working";
+    $db = new DbHandler();
+    $res = $db->getxml();
+    //var_dump($res);
+    echoResponse(200, $res);
 });
 
 /**
