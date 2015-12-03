@@ -20,18 +20,10 @@ $app->post('/newxml', function () use ($app) {
     $gamename = $input['gamename'];
     $description = $input['description'];
 
-    var_dump($xml);
-    var_dump($author);
-
-
     $db = new DbHandler();
     $res = $db->addxml($xml, $author, $gamename, $description);
 
-
     echo $res;
-
-
-
 });
 
 
