@@ -17,13 +17,15 @@ $app->post('/newxml', function () use ($app) {
     $input = json_decode($json, true);
     $xml = $input['xml'];
     $author = $input['author'];
+    $gamename = $input['gamename'];
+    $description = $input['description'];
 
     var_dump($xml);
     var_dump($author);
 
 
     $db = new DbHandler();
-    $res = $db->addxml($xml, $author);
+    $res = $db->addxml($xml, $author, $gamename, $description);
 
 
     echo $res;
@@ -35,9 +37,17 @@ $app->post('/newxml', function () use ($app) {
 
 $app->get('/xml', function () use ($app) {
     $db = new DbHandler();
-    $res = $db->getxml();
+    $res = $db->getxmls();
     //var_dump($res);
     echoResponse(200, $res);
+});
+
+$app->get('/xml/:id', function($id) use ($app) {
+    $db = new DBHandler();
+    $res = $db->getxml($id);
+
+    echoResponse(200, $res);
+
 });
 
 /**
