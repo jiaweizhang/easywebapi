@@ -1,2 +1,7 @@
 xmlcreator/
 .idea/
+api/include/Config.php
+.buildpath
+.project
+.settings/
+.idea/

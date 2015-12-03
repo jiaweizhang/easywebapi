@@ -8,11 +8,8 @@ handlers:
 - url: /img
   static_dir: img
 
-- url: /xmlcreator/js
-  static_dir: xmlcreator/js
-
-- url: /xmlcreator
-  script: xmlcreator/index.html
+- url: /api/.*
+  script: api/index.php
 
 - url: .*
   script: home.html
