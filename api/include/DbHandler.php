@@ -85,6 +85,16 @@ class DbHandler
         $question_result['xmls'] = $menu;
         return $question_result;
     }
+
+    public function deletexml($id) {
+        $stmt = $this->conn->prepare("DELETE FROM xmls WHERE id=?");
+        $stmt->bind_param("s", $id);
+        $result = $stmt->execute();
+        if ($result) {
+            return 1;
+        }
+        return 0;
+    }
 }
 
 ?>

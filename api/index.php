@@ -42,6 +42,12 @@ $app->get('/xml/:id', function($id) use ($app) {
 
 });
 
+$app->get('/deletexml/:id', function($id) use ($app) {
+    $db = new DBHandler();
+    $res = $db->deletexml($id);
+    echoResponse(200, $res);
+});
+
 /**
  * Echoing json response to client
  *
