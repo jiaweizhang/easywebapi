@@ -95,6 +95,17 @@ class DbHandler
         }
         return 0;
     }
+
+    public function addcomment($id, $author, $comment) {
+        $date = date('Y-m-d');
+        $stmt = $this->conn->prepare("INSERT into comments(id, author, comment, date) values (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $id, $author, $comment, $date);
+        $result = $stmt->execute();
+        if ($result) {
+            return 1;
+        }
+        return 0;
+    }
 }
 
 ?>

@@ -48,6 +48,20 @@ $app->get('/deletexml/:id', function($id) use ($app) {
     echoResponse(200, $res);
 });
 
+$app->post('/newcomment', function() use ($app) {
+    $json = $app->request->getBody();
+
+    $input = json_decode($json, true);
+    $id = $input['id'];
+    $author = $input['author'];
+    $comment = $input['comment'];
+
+    $db = new DbHandler();
+    $res = $db->addcomment($id, $author, $comment);
+
+    echo $res;
+});
+
 /**
  * Echoing json response to client
  *
