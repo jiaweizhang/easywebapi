@@ -106,6 +106,33 @@ class DbHandler
         }
         return 0;
     }
+
+    public function getcomment($id) {
+        if ($stmt = $this->conn->prepare("SELECT author, comment, date FROM comments WHERE id=?")) {
+
+            $stmt->bind_param("s", $id);
+
+            $stmt->execute();
+
+            $author = null;
+            $comment = null;
+            $date = null;
+            $stmt->bind_result($author, $comment, $date);
+
+            $menu = array();
+            while ($stmt->fetch()) {
+                $menu[] = array(
+                    "id" => $id,
+                    "author" => $author,
+                    "comment" => $comment,
+                    "date" => $date
+                );
+            }
+            $stmt->close();
+            $question_result['comments'] = $menu;
+            return $question_result;
+        }
+    }
 }
 
 ?>

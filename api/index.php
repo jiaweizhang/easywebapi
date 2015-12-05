@@ -62,6 +62,12 @@ $app->post('/newcomment', function() use ($app) {
     echo $res;
 });
 
+$app->get('/comment/:id', function($id) use ($app) {
+    $db = new DBHandler();
+    $res = $db->getcomment($id);
+    echoResponse(200, $res);
+});
+
 /**
  * Echoing json response to client
  *
