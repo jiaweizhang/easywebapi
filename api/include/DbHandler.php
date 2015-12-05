@@ -20,6 +20,7 @@ class DbHandler
 
     public function addxml($xml, $author, $gamename, $description)
     {
+        date_default_timezone_set('America/New_York');
         $date = date('Y-m-d');
         $stmt = $this->conn->prepare("INSERT into xmls(author, xml, gamename, description, date) values (?, ?, ?, ?, ?)");
         $stmt->bind_param("sssss", $author, $xml, $gamename, $description, $date);
@@ -97,9 +98,11 @@ class DbHandler
     }
 
     public function addcomment($id, $author, $comment) {
+        date_default_timezone_set('America/New_York');
         $date = date('Y-m-d');
-        $stmt = $this->conn->prepare("INSERT into comments(id, author, comment, date) values (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $id, $author, $comment, $date);
+        $time = date('h:i:s');
+        $stmt = $this->conn->prepare("INSERT into comments(id, author, comment, date, time) values (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $id, $author, $comment, $date, $time);
         $result = $stmt->execute();
         if ($result) {
             return 1;
@@ -108,7 +111,7 @@ class DbHandler
     }
 
     public function getcomment($id) {
-        if ($stmt = $this->conn->prepare("SELECT author, comment, date FROM comments WHERE id=?")) {
+        if ($stmt = $this->conn->prepare("SELECT author, comment, date, time FROM comments WHERE id=? ORDER BY commentid")) {
 
             $stmt->bind_param("s", $id);
 
@@ -117,7 +120,8 @@ class DbHandler
             $author = null;
             $comment = null;
             $date = null;
-            $stmt->bind_result($author, $comment, $date);
+            $time = null;
+            $stmt->bind_result($author, $comment, $date, $time);
 
             $menu = array();
             while ($stmt->fetch()) {
@@ -125,7 +129,8 @@ class DbHandler
                     "id" => $id,
                     "author" => $author,
                     "comment" => $comment,
-                    "date" => $date
+                    "date" => $date,
+                    "time" => $time
                 );
             }
             $stmt->close();
