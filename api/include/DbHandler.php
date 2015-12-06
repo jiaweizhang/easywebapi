@@ -62,7 +62,7 @@ class DbHandler
 
     public function getxmls()
     {
-        $stmt = $this->conn->prepare("SELECT id, author, gamename, description, date FROM xmls");
+        $stmt = $this->conn->prepare("SELECT id, author, gamename, description, date FROM xmls ORDER BY id DESC");
 
         $stmt->execute();
         $id = null;
@@ -112,7 +112,7 @@ class DbHandler
     }
 
     public function getcomment($id) {
-        if ($stmt = $this->conn->prepare("SELECT author, comment, date, time FROM comments WHERE id=? ORDER BY commentid")) {
+        if ($stmt = $this->conn->prepare("SELECT author, comment, date, time FROM comments WHERE id=? ORDER BY commentid DESC")) {
 
             $stmt->bind_param("s", $id);
 
