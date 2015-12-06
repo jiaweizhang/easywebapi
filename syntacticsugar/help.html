@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://henryyuen.info/projects.html -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntactic Sugar - Help</title>
+    <link href="./help_files/bootstrap-superhero.css" rel="stylesheet" type="text/css">
+    <link href="./help_files/main.css" rel="stylesheet" type="text/css">
+
+    <script src="./help_files/jquery-1.10.2.min.js"> </script>
+    <script src="./help_files/bootstrap.js"> </script>
+    <script src="./help_files/velocity.min.js"> </script>
+    <script src="./help_files/velocity.ui.js"></script>
+    <script src="./help_files/animation.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="position:relative;margin-bottom:0px">
+        <div class="container">
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="">Syntactic Sugar</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="container body-content" style="width:100%;position:relative;">
+        &nbsp;
+
+        <!--Website Projects Row-->
+        <div class="row" style="position:relative; padding-left:5%; padding-right:5%">
+            <div class="col-md-2 row-section row-heading-section" style="text-align: center; opacity: 1; display: block; transform: translateX(0px);">
+                <h2>Help.</h2>
+            </div>
+            <div class="col-md-10 row-section row-example-section" style="opacity: 1; display: block; transform: translateX(0px);">
+                <div class="col-md-12">
+                <h2>Engine</h2>
+                <br>
+                   <p>The Game Engine is the module of the project that is responsible for playing a game that has been created by the user in the authoring environment. The game created in the authoring environment will be written out to a set of data files (XML files, in this case). These data files will represent the interaction layer between the engine and the authoring environment (that is, the authoring environment generates XML data files representing a “game”, and the engine takes a set of data files representing a “game” and interprets them. That is, the engine will create a set of Java objects from the XML, and then run the basic game loop to allow the user to play the game that they have created.
+                       <br> </br> The basic game engine will loop over all relevant Game Objects in the GUI, calling their respective update() method(s). This method will be the driving force behind all state updates in the back end of the game, and will make cascading method calls to handle movement, collision detection, key input processing, and more on an object-by-object basis</p> 
+              </div>
+     
+                <div class="clear"></div>
+                <div class="col-md-12">
+                <h2>Authoring Environment</h2><br>
+                <p>
+                    The purpose of this program is to implement a rudimentary game engine, so users can create simple 2D games and then subsequently play them. Our goal is to design a platform that is flexible enough to accommodate various versions of a single game genre, such that the user has the ability to easily generate a wide-range of possible games, without explicitly identifying what the game’s specific rules and configurations are. The game genre for our program is ‘Tower Defense’, the general goal of which is to allow the user to build a set of obstacles to block moving enemy characters from reaching a specific point. This basic design specification can easily be extended to generate hundreds of different games, which differ based on three basic parameters: map layout, characters (including enemies), and obstacles. 
+                    <br></br>
+                    Thus, our game engine will be malleable enough to accommodate any type of generated map, character, and obstacle that the user wants to implement for their custom ‘Tower Defense’ game. The basic architecture of our program can be split up into the following general elements: game engine, game authoring module, component hierarchy, and data structure, which together make up the entirety of the front- and back-end of our code. More specifically, the game authoring module is responsible for handling the user interaction as well as generating the GUI components necessary to both create and play a game.
+                    <br></br> On the other hand, the game engine is responsible for handling most of the back-end logic (i.e. defining whether the player can walk across a tile or not, based on its state) and is thus in two-way communication with the game authoring module. Similarly, the component hierarchy defines the basic universal parameters that each possible version of ‘Tower Defense’ share, which are set by the user when creating a game and then subsequently updated when the game is being played. Hence, our program will be designed in a way, such that it is open to basic front-end extensions (i.e. accommodating new types of possible enemies), but closed to modification (i.e. the user can’t define a new component, since the component hierarchy is pre-defined and integral in implementing the back-end logic). 
+                        </p>
+                </div>
+                <div class="clear"></div>
+                <div class="col-md-12">
+                <h2>Social Center</h2><br>
+                <p>The Social Center will upload and download XML files such that players can share their data online and with each other.
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    <div class="footer navbar-inverse">
+
+        <div class="left-footer">
+            <h6>
+                
+            </h6>
+        </div>
+
+        <div class="right-footer">
+            <h6>
+                <br>
+            </h6>
+        </div>
+    </div>
+
+</body></html>

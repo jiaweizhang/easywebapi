@@ -1,0 +1,143 @@
+html, body, .container { height: 100%; }
+body > .container { height: auto; min-height: 100%; }
+
+ .circle-2, #circle-1 {
+                    border-color: #bf5a16;
+                }
+
+                .circle-2, #circle-1, .circle-4, .circle-4-inverse {
+                    position: relative;
+                    border-radius: 50%;
+                    display: inline-block;
+                    border-style: solid;
+                }
+
+                #circle-1 {
+                    float: left;
+                    height: 275px;
+                    width: 275px;
+                    background-position: center top;
+                    background-image: url('../Content/Images/flagHenry.jpg');
+                                        background-repeat: no-repeat;
+                    border-width: 7px;
+                }
+
+                .circle-2 {
+                    height: 200px;
+                    width: 200px;
+                    background-position: center center;
+                    border-width: 3px;
+                }
+
+                .circle-2-msa {
+                    background-image: url("../Content/Images/amc.png");
+                    background-repeat: no-repeat;
+                }
+
+                .circle-2-al {
+                    background-image: url("../Content/Images/azureLens.png");
+                                        background-repeat: no-repeat;
+                }
+
+                .circle-2-kmi{
+                    background-image: url("../Content/Images/kmi.png");
+                                        background-repeat: no-repeat;
+                }
+                .circle-2-mic{
+                    background-image: url("../Content/Images/mic.png");
+                    background-repeat: no-repeat;
+                    background-color:white;
+                }
+                .circle-4, .circle-4:hover {
+                    float: left;
+                    height: 120px;
+
+                    width: 120px;
+                    border-width: 3px;
+                    text-align: center;
+                    overflow: auto;
+                    
+                    font-size:25px;
+                    transition-duration:0.25s;
+                    cursor:pointer;
+                }
+
+                .circle-4 {
+                    background-color: #bf5a16;
+                    border-color: white;
+                    color:white;
+                    
+                }
+
+   .circle-4-spacer {
+                float: left;
+                width: 5%;
+                height: 140px; /* Size of spacer greater than size of circle-4 to allow circles to stack in mobile view*/
+                position: relative;
+            }
+
+                .circle-4:hover {
+                    background-color: white;
+                    border-color: #bf5a16;
+                   color:#bf5a16;
+                              border-width:6px;
+                }
+
+                .skills-caption, .skills-caption-inverse {
+                    font-size: 28px;
+                }
+
+                .skills-caption {
+                    color: white;
+                }
+
+                .skills-caption-inverse {
+                    color: #bf5a16;
+                }
+
+                .row-heading-section {
+                    padding-right: 0%;
+                }
+
+                .row-example-section {
+                    border-left-color: #bf5a16;
+                    border-left-style: none; /* Change to solid for a left border*/
+                    border-left-width: thick;
+                    padding-right: 40px;
+                }
+                /* Apply circle-image to specifically profile image */
+           
+            .col-md-5-sub{
+                        float:left;
+                        width:50%;
+                        padding-right:5%;
+                    }
+                    
+                     .clear {
+                clear: both;
+                padding-top: 5%;
+            }
+
+            .footer {
+                padding-left: 5%;
+                padding-right: 5%;
+                max-height: 300px;
+                overflow: auto;
+             
+ z-index:10;
+ position:relative;
+                width:100%;
+                clear:both;
+            }
+
+            .left-footer {
+                float: left;
+                position: relative;
+                text-align: left;
+            }
+
+            .right-footer {
+                float: right;
+                text-align: left;
+                position: relative;
+            }

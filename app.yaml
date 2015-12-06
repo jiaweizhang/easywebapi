@@ -11,5 +11,8 @@ handlers:
 - url: /api/.*
   script: api/index.php
 
+- url: /syntacticsugar
+  static_dir: syntacticsugar
+
 - url: .*
   script: home.html
