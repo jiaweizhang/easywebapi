@@ -25,8 +25,9 @@ class DbHandler
         $stmt = $this->conn->prepare("INSERT into xmls(author, xml, gamename, description, date) values (?, ?, ?, ?, ?)");
         $stmt->bind_param("sssss", $author, $xml, $gamename, $description, $date);
         $result = $stmt->execute();
+        //$last_id = mysql_insert_id();
         if ($result) {
-            return 1;
+            return $stmt->insert_id;
         }
         return 0;
     }
